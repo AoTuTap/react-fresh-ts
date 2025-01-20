@@ -11,6 +11,7 @@ import LoginPage from 'pages/client/auth/login';
 import RegisterPage from 'pages/client/auth/register';
 import Layout from '@/layout'
 import './styles/global.scss'
+import HomePage from './pages/client/home';
 
 const router = createBrowserRouter([
   {
@@ -18,13 +19,19 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
+        index: true,
+        element: <HomePage />
+      }
+      ,
+      {
         path: "/book",
         element: <BookPage />,
       },
       {
         path: "/about",
         element: <AboutPage />,
-      }
+      },
+
     ]
   }
   ,
